@@ -9,7 +9,8 @@ This is a refactored version of MOLI gene expression code. The purpose of refact
 
 1. Split training code and test code
 2. Specify dataset and hyperparameters as command arguments
-3. Save several charts
+3. Save trained model, hyperparameters, scaler
+4. Save AUC, strip, confusion matrix plot
 
 ## Usage
 
