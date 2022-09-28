@@ -154,3 +154,25 @@ Use `qsub` command to submit `job` file to cluster.
 qsub docetaxel.pbs
 ```
 
+__Job file__
+
+```
+#!/bin/sh
+#PBS -l walltime=24:00:00,nodes=node39
+#PBS -j oe
+#PBS -q hmque
+
+#
+# Change filename for each experiment
+#
+TRAIN_FILENAME='combat_GDSC_2014_Docetaxel_training.csv'
+TEST_FILENAME='combat_GDSC_2014_Docetaxel_test.csv'
+MODEL_FILENAME='combat_GDSC_2014_Docetaxel.pth'
+
+#
+# DO NOT CHANGE
+#
+cd $PBS_O_WORKDIR
+/NA2/anaconda3/bin/python MOLI_train.py -if $TRAIN_FILENAME -mf $MODEL_FILENAME -dc 0.0125 -mb 36 -id 32 -lr 0.1 -dr 0.5 -wd 0.0001 -gm 0.5 -ep 10 -tm 3 > $MODEL_FILENAME_$PBS_JOBID.output.txt
+/NA2/anaconda3/bin/python MOLI_test.py -if $TEST_FILENAME -mf $MODEL_FILENAME >> $MODEL_FILENAME_$PBS_JOBID.output.txt
+```
