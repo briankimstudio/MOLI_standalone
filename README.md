@@ -146,7 +146,11 @@ AUC      : 0.3571
 weighted avg     0.3829    0.3750    0.3783        24
 ```
 
-Thank you very much,
+### Submit to cluster
 
+Use `qsub` command to submit `job` file to cluster.
 
-Brian
+```
+qsub docetaxel.pbs
+```
+
