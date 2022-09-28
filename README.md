@@ -13,7 +13,8 @@ This is a refactored version of MOLI gene expression code. The purpose of refact
 
 ## Usage
 
-For help
+### Help
+
 ```
 $ python MOLI_train.py -h
 
@@ -39,16 +40,73 @@ optional arguments:
 
 ```
 
-## Training
+### Training
+
+- Filename of input dataset: Docetaxel_training.csv
+- Filename of trained model: Docetaxel.pth
 
 ```
 $ python MOLI_train.py -if Docetaxel_training.csv -mf Docetaxel.pth -dc 0.0125 -mb 36 -id 32 -lr 0.1 -dr 0.5 -wd 0.0001 -gm 0.5 -ep 10 -tm 3
 ```
 
-## Test
+### Output
 
 ```
-$ python MOLI_test.py -if combat_GDSC_2014_Docetaxel_test.csv -mf combat_GDSC_2014_Docetaxel.pth
+--------------------------------------------------------------------------------
+Train MOLI only expression model
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Experiment configuration
+--------------------------------------------------------------------------------
+if: Docetaxel_training.csv
+mf: Docetaxel.pth
+id: 32
+dr: 0.5
+dc: 0.0125
+ep: 10
+it: 1
+mb: 36
+lr: 0.1
+wd: 0.0001
+tm: 3.0
+gm: 0.5
+--------------------------------------------------------------------------------
+Modified version of MOLI only expression: Training
+--------------------------------------------------------------------------------
+Date               : 2022-09-28 10:07:41.731896
+Input filename     : Docetaxel_training.csv
+Model filename     : Docetaxel.pth
+Feature dimension  : (850, 7963)
+Class distribution : [0:286, 1:564]
+Baseline accuracy  : 0.6635
+--------------------------------------------------------------------------------
+I:1, K:1, Epoch:0/10, Loss:2.0792, Accuracy:0.5312, AUC:0.7295
+I:1, K:1, Epoch:1/10, Loss:2.0184, Accuracy:0.5000, AUC:0.7594
+I:1, K:1, Epoch:2/10, Loss:1.9222, Accuracy:0.6875, AUC:0.7598
+I:1, K:1, Epoch:3/10, Loss:1.8329, Accuracy:0.7500, AUC:0.7601
+I:1, K:1, Epoch:4/10, Loss:1.9362, Accuracy:0.7188, AUC:0.7041
+I:1, K:1, Epoch:5/10, Loss:1.9004, Accuracy:0.5312, AUC:0.7465
+I:1, K:1, Epoch:6/10, Loss:2.2440, Accuracy:0.5625, AUC:0.7864
+I:1, K:1, Epoch:7/10, Loss:1.9599, Accuracy:0.5938, AUC:0.7684
+I:1, K:1, Epoch:8/10, Loss:2.0142, Accuracy:0.6875, AUC:0.7882
+I:1, K:1, Epoch:9/10, Loss:1.6791, Accuracy:0.6875, AUC:0.7788
+----------------------------------------
+K: 1, Mean AUC:0.7581
+----------------------------------------
+Model saved: combat_GDSC_2014_Docetaxel.pth
+----------------------------------------
+..
+..
+..
+```
+
+### Test
+
+- Filename of input dataset: Docetaxel_test.csv
+- Filename of trained model: Docetaxel.pth
+
+```
+$ python MOLI_test.py -if Docetaxel_test.csv -mf Docetaxel.pth
 ```
 Thank you very much,
 
