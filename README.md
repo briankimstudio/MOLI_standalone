@@ -42,13 +42,13 @@ optional arguments:
 ## Training
 
 ```
-python MOLI_train.py -if Docetaxel_training.csv -mf Docetaxel.pth -dc 0.0125 -mb 36 -id 32 -lr 0.1 -dr 0.5 -wd 0.0001 -gm 0.5 -ep 10 -tm 3
+$ python MOLI_train.py -if Docetaxel_training.csv -mf Docetaxel.pth -dc 0.0125 -mb 36 -id 32 -lr 0.1 -dr 0.5 -wd 0.0001 -gm 0.5 -ep 10 -tm 3
 ```
 
 ## Test
 
 ```
-python MOLI_test.py -if combat_GDSC_2014_Docetaxel_test.csv -mf combat_GDSC_2014_Docetaxel.pth
+$ python MOLI_test.py -if combat_GDSC_2014_Docetaxel_test.csv -mf combat_GDSC_2014_Docetaxel.pth
 ```
 Thank you very much,
 
